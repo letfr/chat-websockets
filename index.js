@@ -8,6 +8,9 @@ const server = app.listen(port, () => {
 });
 
 app.use(express.static("public"));
+app.get('/', function(request, response) {
+  response.render('public/index');
+});
 
 const io = socket(server);
 
