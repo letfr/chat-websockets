@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:3003");
+const socket = io.connect("https://chat-maluco.herokuapp.com/"||"http://localhost:3003");
 
 let elements = {
   message: document.getElementById("message"),
