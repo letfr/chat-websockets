@@ -1,0 +1,50 @@
+body{
+  font-family: 'Playfair Display', serif !important;
+}
+
+header{
+  width: 100%;
+  padding: 10px;
+}
+
+#content{
+  background-color: #F8F8F8;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-window{
+  height: 60vh;
+  overflow: auto;
+}
+
+textarea{
+  height: 70px !important;
+}
+
+#send{
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  width: 30%;
+  margin: 0 auto;
+}
+
+#send:hover{
+  cursor: pointer;
+}
+
+.msg{
+  word-wrap: break-word;
+  padding: 15px;
+  margin: 5px !important;
+  width: 99%;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.msg strong{
+  font-weight: 700;
+  text-transform: capitalize;
+}

@@ -21,7 +21,7 @@ elements.message.addEventListener("keypress", () => {
 
 socket.on("chat", (data) => {
   elements.feedback.innerHTML = "";
-  elements.output.innerHTML += `<p><strong>${data.handle}:</strong>${data.message}</p>`;
+  elements.output.innerHTML += `<p class="msg"><strong>${data.handle}:</strong> ${data.message}</p>`;
 });
 
 socket.on("typing", (data) => {
