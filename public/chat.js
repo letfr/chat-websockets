@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:3003");
+const socket = io.connect(`http://localhost:${process.env.PORT}` || "http://localhost:3003");
 
 let elements = {
   message: document.getElementById("message"),
