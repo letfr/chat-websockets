@@ -13,6 +13,7 @@ elements.btn.addEventListener("click", () => {
     message: elements.message.value,
     handle: elements.handle.value
   });
+  elements.message.value = "";
 });
 
 elements.message.addEventListener("keypress", () => {
