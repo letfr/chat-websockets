@@ -52,3 +52,8 @@ textarea{
   font-weight: 700;
   text-transform: capitalize;
 }
+#username{
+  margin: 10px 0;
+  font-size: 28px;
+  text-transform: capitalize;
+}

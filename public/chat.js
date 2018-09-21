@@ -5,7 +5,8 @@ let elements = {
   user: document.getElementById("user"),
   btn: document.getElementById("send"),
   output: document.getElementById("output"),
-  feedback: document.getElementById("feedback")
+  feedback: document.getElementById("feedback"),
+  chatWindow: document.getElementById("chat-window")
 };
 
 elements.btn.addEventListener("click", () => {
@@ -14,6 +15,7 @@ elements.btn.addEventListener("click", () => {
     user: elements.user.value
   });
   elements.message.value = "";
+  elements.chatWindow.scrollTo(0,elements.chatWindow.scrollHeight)
 });
 
 elements.message.addEventListener("keypress", () => {
@@ -23,15 +25,15 @@ elements.message.addEventListener("keypress", () => {
 elements.user.addEventListener("blur", () => {
   elements.user.remove();
   const username = document.getElementById("username");
-  username.innerHTML = elements.user.value || "Anonymous";
+  username.innerHTML = elements.user.value || `<h1 id="username">Anonymous</h1>`;
   username.setAttribute("display", "block");
 });
 
 socket.on("chat", (data) => {
   elements.feedback.innerHTML = "";
-  elements.output.innerHTML += `<p class="msg"><strong>${data.user}:</strong> ${data.message}</p>`;
+  elements.output.innerHTML += `<p class="msg"><strong data-user="${socket.id}" id="user-color">${data.user || "Anonymous"}:</strong> ${data.message}</p>`;
 });
 
 socket.on("typing", (data) => {
   elements.feedback.innerHTML = `<p><em>${data} is typing...</em></p>`;
-})
+});
